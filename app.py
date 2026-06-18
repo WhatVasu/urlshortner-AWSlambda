@@ -11,12 +11,12 @@ app.secret_key = os.environ.get("SECRET_KEY", "change-me")
 def get_surl(url):
   
 
- url = "https://q1llke7695.execute-api.us-east-1.amazonaws.com/shortit"
+ burl = "https://q1llke7695.execute-api.us-east-1.amazonaws.com/shortit"
  body={
     "url":url
  }
 
- response = requests.post(url,json=body)
+ response = requests.post(burl,json=body)
  scode=response.json()["short_code"]
  u=f"https://q1llke7695.execute-api.us-east-1.amazonaws.com/{scode}"
  return u
